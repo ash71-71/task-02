@@ -29,7 +29,14 @@
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            /* Updated background-image with a placeholder URL */
+            background-image: url('https://cdn.pixabay.com/photo/2023/05/29/08/35/art-8025344_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
+
 
         .form-container {
             background-color: white;
@@ -39,6 +46,8 @@
             width: 100%;
             max-width: 500px;
             transition: all 0.3s ease;
+            opacity: .95;
+            box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2);
         }
 
         .form-container:hover {
@@ -150,6 +159,19 @@
             color: #4361ee;
             margin-top: 10px;
 }
+        .gender{
+            width: 10%;
+       
+        }
+        .genderlablem{
+            float: left;
+            width: 11%;
+
+        }
+        .genderlablef{
+            float: left;
+          
+        }
 
     </style>
 </head>
@@ -166,7 +188,7 @@
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter Your Email">
+                <input type="email" id="email" placeholder="example@gmail.com">
                 <div class="error-message" id="email-error">Please enter a valid email</div>
             </div>
 
@@ -185,20 +207,37 @@
 
             <div class="form-group">
                 <label for="age">Age</label>
-                <input type="number" id="age" placeholder="Enter Your Age" required min="13" max="120">
+                <input type="number" id="age" placeholder="Enter Your Age" required min="18" max="100">
                 <div class="error-message" id="age-error">Please enter a valid age (13-120)</div>
             </div>
 
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <hr style="width: 25%;">
+                <div>
+                    <label for="male" class="genderlablem">Male</label>
+                    <input type="radio" id="male" name="gender" value="male" class="gender" required>
+                </div>
+                <br>
+                <div>
+                    <label for="female" class="genderlablef">Female</label>
+                    <input type="radio" id="female" name="gender" value="female" class="gender" required>
+
+                </div>
+                <div class="error-message" id="gender-error">Please select your gender</div>
+            </div>
+            <br>
             <div class="form-group">
                 <div class="checkbox-label">
                     <input type="checkbox" id="terms">
                     <label > Terms and Conditions</label>
                 </div>
             </div>
+
             <div class="loading-spinner" id="loadingSpinner" style="display: none;">
                 Loading...
             </div>
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn">Register</button>
         </form>
     </div>
 
