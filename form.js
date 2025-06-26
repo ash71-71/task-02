@@ -7,7 +7,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const showPasswordCheckbox = document.getElementById("showPassword");
   const terms = document.getElementById("terms");
   const loadingSpinner = document.getElementById("loadingSpinner");
+  const male=document.getElementById("male");
+  const femle = this.document.getElementById("female");
 
+  const gender ="";
+  if(male.checked){
+    gender="male";
+  }
+  else{
+    gender ="female"
+  }
   showPasswordCheckbox.addEventListener("click", function () {
     togglePassword();
   });
@@ -33,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
             full_name: nameInput.value.trim(),
             email: emailInput.value.trim().toLowerCase(),
             age: parseInt(ageInput.value),
+            gender : gender,
           },
           account_details: {
             password: passwordInput.value,
